@@ -30,10 +30,10 @@ final class ScreenBrightnessObserver: NSObject {
     public func startObserving(withInitialUpdate: Bool = true) {
         stopObserving()
         defer { if withInitialUpdate { setNeedsUpdate() } }
-        let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleBacklightDisplay"))
+        let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleCLCD"))
         guard service != IO_OBJECT_NULL else {
             #if DEBUG
-            fatalError("AppleBacklightDisplay is IO_OBJECT_NULL")
+            fatalError("AppleCLCD is IO_OBJECT_NULL")
             #else
             return remindReportingBug(NSLocalizedString(
                 "ScreenBrightnessObserver.startObserving.failed",
