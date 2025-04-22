@@ -125,8 +125,14 @@ extension Location {
 // MARK: - Core Location
 
 extension Location {
-    static var deniedAccess: Bool {
-        let status = CLLocationManager.authorizationStatus()
+    private static let _locationManager = CLLocationManager()
+        
+        static var deniedAccess: Bool {
+            let status: CLAuthorizationStatus
+            
+            // Use the new instance property instead of class method
+            status = _locationManager.authorizationStatus
+            
         switch status {
         case .authorizedAlways, .notDetermined:
             return false
@@ -139,7 +145,7 @@ extension Location {
     }
     
     static var allowsAccess: Bool {
-        let status = CLLocationManager.authorizationStatus()
+        let status = _locationManager.authorizationStatus
         switch status {
         case .authorizedAlways:
             return true
@@ -150,7 +156,19 @@ extension Location {
             return false
         }
     }
+    
+    
+    private static func getStatusDescription(_ status: CLAuthorizationStatus) -> String {
+        switch status {
+        case .notDetermined: return "CLAuthorizationStatus.notDetermined"
+        case .restricted: return "CLAuthorizationStatus.restricted"
+        case .denied: return "CLAuthorizationStatus.denied"
+        case .authorizedAlways: return "CLAuthorizationStatus.authorizedAlways"
+        @unknown default: return "CLAuthorizationStatus.\(status.rawValue)"
+        }
+    }
 }
+
 
 extension CLError {
     static let nsDenied = NSError(
@@ -165,7 +183,7 @@ func == (lhs: Error?, rhs: CLError) -> Bool {
     return CLError.nsDenied.isEqual(to: lhs)
 }
 
-extension CLAuthorizationStatus: CustomStringConvertible {
+extension CLAuthorizationStatus: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .notDetermined:
