@@ -86,31 +86,52 @@ extension AppleScript {
     ) {
         DispatchQueue.global().async {
             let systemEvents = "com.apple.systemevents"
-            // We need to get it running to send it messages
-            NSWorkspace.shared.launchApplication(
-                withBundleIdentifier: systemEvents,
-                additionalEventParamDescriptor: nil,
-                launchIdentifier: nil
-            )
-            let target = NSAppleEventDescriptor(bundleIdentifier: systemEvents)
-            let status = AEDeterminePermissionToAutomateTarget(
-                target.aeDesc, typeWildCard, typeWildCard, true
-            )
-            switch Int(status) {
-            case Int(noErr):
-                return process(true)
-            case errAEEventNotPermitted:
-                break
-            case errOSAInvalidID, -1751,
-                 errAEEventWouldRequireUserConsent,
-                 procNotFound:
-                if retryOnInternalError {
-                    requestPermission(retryOnInternalError: false, then: process)
-                } // else ignore
-            default:
-                remindReportingBug("OSStatus \(status)")
+            
+            // Find System Events application URL using modern API
+            let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: systemEvents)
+                ?? URL(fileURLWithPath: "/System/Library/CoreServices/System Events.app")
+            
+            // Configure the launch options
+            let configuration = NSWorkspace.OpenConfiguration()
+            
+            // Launch System Events app
+            NSWorkspace.shared.openApplication(at: appURL,
+                                              configuration: configuration) { app, error in
+                if let error = error {
+                    remindReportingBug("Failed to launch System Events: \(error.localizedDescription)")
+                    if retryOnInternalError {
+                        requestPermission(retryOnInternalError: false, then: process)
+                        return
+                    }
+                    process(false)
+                    return
+                }
+                
+                // Now that System Events is running, check automation permission
+                let target = NSAppleEventDescriptor(bundleIdentifier: systemEvents)
+                let status = AEDeterminePermissionToAutomateTarget(
+                    target.aeDesc, typeWildCard, typeWildCard, true
+                )
+                
+                switch Int(status) {
+                case Int(noErr):
+                    process(true)
+                case errAEEventNotPermitted:
+                    process(false)
+                case errOSAInvalidID, -1751,
+                     errAEEventWouldRequireUserConsent,
+                     procNotFound:
+                    if retryOnInternalError {
+                        requestPermission(retryOnInternalError: false, then: process)
+                    } else {
+                        process(false)
+                    }
+                default:
+                    remindReportingBug("OSStatus \(status)")
+                    process(false)
+                }
             }
-            process(false)
         }
     }
+
 }
