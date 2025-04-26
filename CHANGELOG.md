@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.2] - 2025-04-21
+### Changed
+- Added Apple Silicon Support
+
 ## [1.5.2] - 2019-09-23
 ### Changed
 - Switches dark mode with SkyLight when missing AppleScript permission
