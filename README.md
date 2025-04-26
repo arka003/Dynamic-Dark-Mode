@@ -1,6 +1,6 @@
 # Dynamic Dark Mode
 
-*Dynamic Dark Mode* is the app you are looking for to power up Dark Mode on macOS Mojave and beyond.
+*Dynamic Dark Mode* is the app you are looking for to power up Dark Mode on macOS Big Sur and beyond.
 
 Instead of looking for the switch for dark mode in System Preferences, just click the icon in the menu bar. Ever felt your eyes getting hurt because the screen is so bright in the night? Have to worry no more, we Dynamically enable dark mode in dim lights, after sunset, or just anytime. When you wake up in the morning, it'll a be another bright day.
 
