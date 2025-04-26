@@ -65,8 +65,6 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     }()
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        // Get the authorization status from the manager instance
-        let status = manager.authorizationStatus
         
         // Forward to delegate if needed
         delegate?.locationManagerDidChangeAuthorization?(manager)
