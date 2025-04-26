@@ -10,18 +10,7 @@ Instead of looking for the switch for dark mode in System Preferences, just clic
 
 ### Direct Download
 
-<details>
   <summary><a href="https://github.com/user-attachments/files/19834078/Dynamic.Dark.Mode.zip">Latest Release</a></summary>
-
-  Additionally, you may also download:
-
-  <ul>
-    <li><a href="https://rebrand.ly/ddm-nightly" target="_blank">Nightly Build</a></li>
-    <li><a href="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases">Earlier Releases</a></li>
-    <li><a href="https://rebrand.ly/ddm-all" target="_blank">Earlier Builds</a></li>
-  </ul>
-
-</details>
 
 ## License
 
