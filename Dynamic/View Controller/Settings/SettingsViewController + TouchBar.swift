@@ -112,15 +112,9 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
     }
 }
 
-extension NSTouchBarItem.Identifier: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(rawValue: value)
-    }
-}
-
 extension NSTouchBarItem.Identifier {
-    static let thresholdPopoverItem = "thresholdPopoverItem" as NSTouchBarItem.Identifier
-    static let scheduleTypePopoverItem = "scheduleTypePopoverItem" as NSTouchBarItem.Identifier
-    static let thresholdSubSliderItem = "thresholdSubSliderItem" as NSTouchBarItem.Identifier
-    static let scheduleTypeSubScrubberItem = "scheduleTypeSubSliderItem" as NSTouchBarItem.Identifier
+    static let thresholdPopoverItem = NSTouchBarItem.Identifier("thresholdPopoverItem")
+    static let scheduleTypePopoverItem = NSTouchBarItem.Identifier("scheduleTypePopoverItem")
+    static let thresholdSubSliderItem = NSTouchBarItem.Identifier("thresholdSubSliderItem")
+    static let scheduleTypeSubScrubberItem = NSTouchBarItem.Identifier("scheduleTypeSubSliderItem")
 }
