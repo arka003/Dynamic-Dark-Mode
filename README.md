@@ -4,7 +4,7 @@
 
 Instead of looking for the switch for dark mode in System Preferences, just click the icon in the menu bar. Ever felt your eyes getting hurt because the screen is so bright in the night? Have to worry no more, we Dynamically enable dark mode in dim lights, after sunset, or just anytime. When you wake up in the morning, it'll a be another bright day.
 
-![Settings for Dynamic Dark Mode](https://user-images.githubusercontent.com/10842684/54065701-b240e800-41f2-11e9-8f7a-5d502ab27c4e.png)
+![Settings for Dynamic Dark Mode](https://github.com/user-attachments/assets/e9551a97-e7f2-49ab-a93a-2701a75e6095)
 
 ## Install
 
