@@ -76,7 +76,7 @@ struct Solar {
     }
 }
 
-extension DateComponents: Comparable {
+extension DateComponents: @retroactive Comparable {
     public static func < (lhs: DateComponents, rhs: DateComponents) -> Bool {
         return lhs.hour! < rhs.hour!
             || lhs.hour! == rhs.hour! && lhs.minute! < rhs.minute!
