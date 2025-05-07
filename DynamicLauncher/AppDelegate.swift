@@ -24,11 +24,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         defer { NSApp.terminate(nil) }
         guard noInstanceRunning else { return }
-        NSWorkspace.shared.launchApplication(
-            withBundleIdentifier: id,
-            options: .default,
-            additionalEventParamDescriptor: nil,
-            launchIdentifier: nil
-        )
+        
+        // Get URL for the app bundle
+        guard let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: id) else {
+            print("Failed to find app URL for bundle identifier: \(id)")
+            return
+        }
+        
+        let configuration = NSWorkspace.OpenConfiguration()
+        
+        NSWorkspace.shared.openApplication(at: appURL, configuration: configuration) { app, error in
+            if let error = error {
+                print("Failed to launch app: \(error.localizedDescription)")
+            }
+        }
     }
 }
