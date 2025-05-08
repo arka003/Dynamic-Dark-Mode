@@ -163,6 +163,7 @@
 		706D396320E37A5E0079535E /* Dynamic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dynamic-Bridging-Header.h"; sourceTree = "<group>"; };
 		706D396620E37A870079535E /* TouchBarPrivateAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateAPI.h; sourceTree = "<group>"; };
 		707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDesktopSettingsViewController.swift; sourceTree = "<group>"; };
+		A4292A822DCCCA530084AF1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D20E0E8023332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D20E0E8123332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D20E0E8223332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -691,6 +692,7 @@
 				52B37155227BC73A0005B1B7 /* ko */,
 				D20E0E8323332D0E0058504E /* es */,
 				D2432B7724A445720049EF35 /* nl */,
+				A4292A822DCCCA530084AF1B /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
