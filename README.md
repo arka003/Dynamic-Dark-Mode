@@ -52,7 +52,7 @@ This is not quite what you are looking for? Here's a non-comprehensive list of o
 | [Irvu‪e‬](https://apps.apple.com/app/id1039633667) (wallpaper) |                         |                 |               |  | ✅ | ✅ |      |         |           |
 | [One Switch](https://fireball.studio/oneswitch/) (multi-tool) |                         |                 |               |  |              | ✅        |      |         | ✅ |
 
-> \* Dynamic Dark Mode uses screen brightness, and requires "Automatically adjust brightness" option enabled in System Preferences for ambient light based changes.
+> \* Dynamic Dark Mode uses screen brightness, and requires "Automatically adjust brightness" option enabled in System Preferences for ambient light based changes, does not work on Apple Silicon (for now)
 
 ---
 
