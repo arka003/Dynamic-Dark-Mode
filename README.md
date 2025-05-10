@@ -6,12 +6,6 @@ Instead of looking for the switch for dark mode in System Preferences, just clic
 
 ![Settings for Dynamic Dark Mode](https://github.com/user-attachments/assets/e9551a97-e7f2-49ab-a93a-2701a75e6095)
 
-## Install
-
-### Direct Download
-
-  <summary><a href="https://github.com/user-attachments/files/19834078/Dynamic.Dark.Mode.zip">Latest Release</a></summary>
-
 ## License
 
 ```
